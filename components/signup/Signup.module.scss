@@ -1,0 +1,50 @@
+.container {
+  background-color: #f4f3f8;
+  height: 100%;
+  min-height: 100vh;
+  padding: 40px 25px;
+  overflow:hidden;
+}
+
+.content {
+  padding: 30px 50px;
+  background: #ffffff;
+  border-radius: 37px;
+  width: 100%;
+  max-width: 970px;
+}
+
+.image_wrapper{
+  position:absolute;
+  left:371px;
+  top:-36px;
+  
+}
+
+@media (max-width: 575px) {
+  .image_wrapper {
+    position:fixed;
+  }
+}
+.logo {
+  width: 95px;
+  height: 95px;
+}
+
+.form {
+  width: 100%;
+}
+
+
+.image {
+  background-image: url("../../assets/images/signup/backgroundImage.svg");
+  background-repeat: no-repeat;
+  background-position: 40px 50px;
+}
+
+
+@media (max-width: 575px) {
+  .content {
+    padding: 30px;
+  }
+}

@@ -1,0 +1,44 @@
+.logo {
+  width: 115px;
+  height: 55px;
+}
+
+.header {
+  left: 0;
+  top: 0;
+  padding: 20px 0;
+}
+
+.loginbutton {
+  width: 160px;
+}
+
+.profilecontent {
+  height: 51px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsla(60, 29%, 92%, 0.5);
+}
+
+
+@media (max-width: 768px) {
+  .menubarheader {
+    display: block;
+  }
+
+  .menuheader {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .loginbutton {
+    width: 100px;
+  }
+
+  .profilecontent {
+  width: 120px;
+  }
+}

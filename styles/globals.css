@@ -1,0 +1,713 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html,
+body {
+  font-size: 62.5%;
+  font-family: "Roboto", sans-serif;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+ul {
+  padding: 0;
+}
+
+#hamburger-11 {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger-11.is-active {
+  animation: smallbig 0.6s forwards;
+}
+
+@keyframes smallbig {
+  0%,
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+  }
+}
+
+#hamburger-11.is-active .line:nth-child(1),
+#hamburger-11.is-active .line:nth-child(2),
+#hamburger-11.is-active .line:nth-child(3) {
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+
+#hamburger-11.is-active .line:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-11.is-active .line:nth-child(1) {
+  -webkit-transform: translateY(5px) rotate(45deg);
+  -ms-transform: translateY(5px) rotate(45deg);
+  -o-transform: translateY(5px) rotate(45deg);
+  transform: translateY(5px) rotate(45deg);
+}
+
+#hamburger-11.is-active .line:nth-child(3) {
+  -webkit-transform: translateY(-13px) rotate(-45deg);
+  -ms-transform: translateY(-13px) rotate(-45deg);
+  -o-transform: translateY(-13px) rotate(-45deg);
+  transform: translateY(-13px) rotate(-45deg);
+}
+
+.hamburger .line {
+  width: 30px;
+  height: 3px;
+  background-color: #517baf;
+  display: block;
+  margin: 6px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+
+.mobilemenu {
+  display: flex;
+  -webkit-box-pack: end;
+  justify-content: flex-end;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  bottom: 0px;
+  z-index: 999;
+  user-select: auto;
+  transform: translateX(100%);
+  transition: transform 0.8s ease-in 0s;
+}
+
+.mobilemenu.active {
+  transform: translateX(0);
+}
+
+.menubarheader {
+  display: none;
+}
+
+.mobilemenuinner {
+  box-shadow: 2px 8px 23px 3px rgb(0 0 0 / 20%);
+  background-color: #fff;
+  text-align: right;
+  padding: 15px 15px 0 0;
+  display: block;
+}
+
+.mobilemenucontent {
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+}
+
+.mobilelogosidemenu {
+  margin-top: 150px;
+}
+
+@media (max-width: 768px) {
+  .menubarheader {
+    display: block;
+  }
+
+  .menuheader {
+    display: none;
+  }
+
+  .loginbuttonheader {
+    display: none;
+  }
+}
+
+ul .react-tabs__tab--selected {
+  border-radius: 22px;
+  background-color: #003f9a;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.swal2-styled {
+  width: 190px !important;
+  height: 60px !important;
+  background-color: #003f9a !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+.swal2-popup {
+  font-size: 18px !important;
+}
+
+div[role="menu"] {
+  visibility: hidden;
+}
+
+div[role="menu"].visible {
+  visibility: visible;
+}
+
+.headerprofilemenu {
+  position: absolute;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  width: 180px;
+  padding: 15px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #00000017;
+  z-index: 99;
+}
+
+.headerprofilemenu a {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.headerprofilemenu a:last-child {
+  margin-bottom: 0;
+}
+
+.chatmodal {
+  width: 750px !important;
+  box-shadow: 0px 0px 18px #00000014 !important;
+  border-radius: 12px !important;
+  padding-bottom: 0 !important;
+}
+
+.swal2-html-container {
+  margin: 0 !important;
+}
+
+.bookedmodal {
+  max-width: 450px !important;
+  padding: 0 !important;
+  border-radius: 12px !important;
+}
+.submitmodal {
+  max-width: 490px !important;
+  padding: 0 !important;
+  border-radius: 37px !important;
+}
+
+.timepicker__timemodecontainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  height: 50px;
+  width: 100px;
+  position: relative;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.timepicker__timemode {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+}
+
+.timepicker__timemodedropdown {
+  position: absolute;
+  border: 1px solid #dedede;
+  top: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.timepicker__timemodedropdownvalue {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+  padding: 10px;
+  border-bottom: 1px solid #dedede;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timepicker__timemodedropdownvalue:hover {
+  background-color: #dedede;
+}
+
+.timepicker__timemodedropdownvalue:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.timepicker {
+  display: flex;
+  align-items: center;
+}
+
+.timepicker__timemodedropdown.active {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  height: 97px;
+}
+
+.timepicker__hourcontainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  height: 50px;
+  width: 100px;
+  position: relative;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.timepicker__hour {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+}
+
+.timepicker__hourdropdown {
+  position: absolute;
+  border: 1px solid #dedede;
+  top: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.timepicker__hourdropdownvalue {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+  padding: 10px;
+  border-bottom: 1px solid #dedede;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timepicker__hourdropdownvalue:hover {
+  background-color: #dedede;
+}
+
+.timepicker__hourdropdownvalue:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.timepicker {
+  display: flex;
+  align-items: center;
+}
+
+.timepicker__hourdropdown.active {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  height: 193px;
+  overflow: auto;
+}
+
+.timepicker__minutecontainer {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dedede;
+  border-radius: 6px;
+  height: 50px;
+  width: 100px;
+  position: relative;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.timepicker__minute {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+}
+
+.timepicker__minutedropdown {
+  position: absolute;
+  border: 1px solid #dedede;
+  top: 48px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
+  height: 0;
+  max-height: 0;
+  transition: all 0.3s ease;
+}
+
+.timepicker__minutedropdownvalue {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+  padding: 10px;
+  border-bottom: 1px solid #dedede;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.timepicker__minutedropdownvalue:hover {
+  background-color: #dedede;
+}
+
+.timepicker__minutedropdownvalue:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.timepicker {
+  display: flex;
+  align-items: center;
+}
+
+.timepicker__minutedropdown.active {
+  max-height: 500px;
+  opacity: 1;
+  visibility: visible;
+  height: 193px;
+  overflow: auto;
+}
+
+.timepicker__coloncontainer {
+  margin: 0 10px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #1c2826;
+}
+
+.fc {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px !important;
+}
+
+.swal2-icon.swal2-error.swal2-icon-show {
+  font-size: 18px !important;
+  margin: 0 !important;
+  margin: 0 auto !important;
+  margin-top: 25px !important;
+}
+
+h2#swal2-title {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  color: #1e1e1e !important;
+  padding-top: 25px !important;
+}
+
+.swal2-actions {
+  /* width: 100% !important; */
+  margin-top: 35px !important;
+}
+
+.swal2-styled {
+  /* width: 100% !important; */
+  height: 45px !important;
+  background-color: #003f9a !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  /* margin: 0 !important; */
+  /* padding: 0 !important; */
+  max-width: 360px !important;
+  border-radius: 30px !important;
+}
+
+.messageshow {
+  border-radius: 12px !important;
+  max-width: 400px !important;
+}
+
+.bookcalendar {
+  width: 500px !important;
+  margin: 0 auto;
+  box-shadow: 0 0 10px #fff;
+}
+
+.googlesearch > div > span + div {
+  box-shadow: 0px 15px 32px #d4d4d426 !important;
+  border: 1px solid #e6e6e6 !important;
+  border-radius: 30px !important;
+  color: rgba(81, 93, 112, 0.5) !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+  width: 100% !important;
+  height: 60px !important;
+  padding: 0 190px 0 24px !important;
+}
+
+.googlesearch > * {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 400 !important;
+  font-size: 15px !important;
+}
+
+@media (max-width: 1024px) {
+  .googlesearch > div > span + div {
+    padding: 0 125px 0 24px !important;
+  }
+}
+
+.loader {
+  font-size: 10px;
+  margin: 50px auto;
+  text-indent: -9999em;
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: #ffffff;
+  background: -moz-linear-gradient(
+    left,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -webkit-linear-gradient(
+    left,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: -o-linear-gradient(left, #ffffff 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(
+    left,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  background: linear-gradient(
+    to right,
+    #ffffff 10%,
+    rgba(255, 255, 255, 0) 42%
+  );
+  position: relative;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.loader:before {
+  width: 50%;
+  height: 50%;
+  background: #ffffff;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+}
+.loader:after {
+  background: #003f9a;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.loader_color {
+  margin: 0 0;
+  width: 15em;
+  height: 15em;
+  background: #00409b;
+}
+.loader_color:after {
+  background: #ffff;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.loader.customLoader {
+  margin-right: 17px;
+  margin-top: 0;
+  margin-left: 0;
+  width: 0;
+  height: 0;
+}
+.loader_container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 315px;
+  padding-top: 100px;
+  align-items: center;
+  gap: 100px;
+}
+.loader_text {
+  font-size: 30px;
+}
+.book_now_loader {
+  width: 0;
+  height: 0;
+  margin-bottom: 15px;
+}
+.payment_contains {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 53em;
+}
+.btn_:hover .loader:after {
+  background-color: #fff;
+}
+.btn_:hover .loader {
+  background: #00409b;
+}
+.locationtab_circle {
+  min-width: 50px !important;
+}
+
+#nprogress .spinner {
+  display: block !important;
+  position: fixed !important;
+  z-index: 1031 !important;
+  top: 0 !important;
+  right: 0 !important;
+  background: #fff !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+#nprogress .spinner-icon {
+  width: 75px !important;
+  height: 75px !important;
+  box-sizing: border-box !important;
+  border: solid 5px transparent !important;
+  border-top-color: #13102c !important;
+  border-left-color: #13102c !important;
+  border-radius: 50% !important;
+  -webkit-animation: nprogresss-spinner 400ms linear infinite !important;
+  animation: nprogress-spinner 400ms linear infinite !important;
+}
+
+#nprogress .bar {
+  background: #13102c !important;
+}

@@ -1,0 +1,30 @@
+.notification {
+  border-bottom: 1px solid #dadada;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.notification:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.content {
+  width: calc(100% - 50px)
+}
+
+.notificationcontainer {
+  padding: 50px;
+}
+
+@media (max-width: 575px ) {
+  .notificationcontainer {
+     padding: 25px;
+
+  }
+
+  .content {
+    width: calc(100%)
+  }
+}
